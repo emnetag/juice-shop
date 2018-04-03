@@ -1,14 +1,13 @@
 pipeline {
   agent {
     docker {
-      image 'node:9-alpine'
-      args '-p 3030:3030 -u root:root'
+      image 'node:9'
     }
   }
   stages {
     stage('Build') {
       steps {
-        sh 'npm install'
+        sh 'npm install --production --unsafe-perm'
       }
     }
   }
