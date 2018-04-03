@@ -3,6 +3,7 @@ pipeline {
   agent {
     docker {
       image 'node:9'
+      args '-u jenkins:jenkins'
     }
   }
   
